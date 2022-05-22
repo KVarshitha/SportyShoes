@@ -1,0 +1,42 @@
+package com.spring.boot.ss.models;
+
+public class Product {
+	Integer ProductID;
+	String ProductName;
+	Integer MSRP;
+	Integer Quantity;
+	String Vendor;
+	
+	
+	public Integer getProductID() {
+		return ProductID;
+	}
+	public void setProductID(Integer productID) {
+		ProductID = productID;
+	}
+	public String getProductName() {
+		return ProductName;
+	}
+	public void setProductName(String productName) {
+		ProductName = productName;
+	}
+	public Integer getMSRP() {
+		return MSRP;
+	}
+	public void setMSRP(Integer mSRP) {
+		MSRP = mSRP;
+	}
+	public Integer getQuantity() {
+		return Quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		Quantity = quantity;
+	}
+	public String getVendor() {
+		return Vendor;
+	}
+	public void setVendor(String vendor) {
+		Vendor = vendor;
+	}
+	
+}

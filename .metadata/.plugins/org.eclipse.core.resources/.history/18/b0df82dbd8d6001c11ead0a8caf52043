@@ -1,0 +1,5 @@
+package com.spring.boot.ss.daos;
+
+public class UserDAO {
+
+}

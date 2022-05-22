@@ -1,0 +1,21 @@
+package com.spring.boot.ss.services;
+
+import java.util.List;
+
+import com.spring.boot.ss.models.Product;
+
+
+public interface ProductService {
+	
+	User saveDepartment(Product user);
+	  
+    // Read operation
+    List<Product> fetchDepartmentList();
+  
+    // Update operation
+    Product updateDepartment(User user,
+                                Integer UserID);
+  
+    // Delete operation
+    void deleteUserById(Integer UserId);
+}

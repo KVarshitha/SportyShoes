@@ -1,0 +1,5 @@
+package com.spring.boot.ss.models;
+
+public class Orderdetails {
+
+}

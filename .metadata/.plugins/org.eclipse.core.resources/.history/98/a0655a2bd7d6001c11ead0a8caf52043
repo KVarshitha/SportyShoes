@@ -1,0 +1,14 @@
+package com.example.controllers;
+
+import org.springframework.context.annotation.ComponentScan;
+@RestController
+public class Controllerfoobar {
+
+	@GetMapping("/welcome")
+	public String display() {
+	String mess="idiot";
+		return mess;
+	}
+	
+	
+} 

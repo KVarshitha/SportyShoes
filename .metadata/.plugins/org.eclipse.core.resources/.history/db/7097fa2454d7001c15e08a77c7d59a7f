@@ -1,0 +1,28 @@
+package com.spring.boot.ss.services;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.spring.boot.ss.models.Orders;
+import com.spring.boot.ss.models.Product;
+import com.spring.boot.ss.models.User;
+
+public interface OrderService  {
+
+	Orders addOrder(Orders order);
+	  
+    // Read operation
+    List<Orders> UserorderbyuserID(Integer userID);
+    
+
+    List<Orders> Allorders();
+  
+    List<Orders> orderbyProductID(Integer productiD);
+    // Update operation
+    Orders updateOrder(Product Product,
+                                Integer ProductId);
+  
+    // Delete operation
+    void deleteProductById(Integer ProductId);
+}

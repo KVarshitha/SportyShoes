@@ -1,0 +1,17 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.example.controllers.Controllerfoobar;
+
+@SpringBootApplication
+public class DemoFooSpringbootApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoFooSpringbootApplication.class, args);
+		System.out.println("printed");
+	}
+
+}

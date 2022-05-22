@@ -1,0 +1,62 @@
+package com.spring.boot.ss.services;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.spring.boot.ss.models.Orders;
+import com.spring.boot.ss.repo.OrderRepository;
+
+
+@Service
+public class OrderServiceImpl implements OrderService{
+
+	@Autowired
+	private OrderRepository service;
+	
+	
+	
+	@Override
+	public Orders addOrder(Orders order) {
+		return service.save(order);
+	}
+
+	@Override
+	public List<Orders> UserorderbyuserID(Integer userID) {
+		List<Orders> list =  (List<Orders>)service.findAll();
+		List<Orders> orderlist = null;
+		for (Orders orders : list) {
+			if(orders.getUserID()==userID) {
+				orderlist.add(orders);
+			}
+		}
+		return orderlist; 
+
+	}
+
+	@Override
+	public List<Orders> Allorders() {
+		// TODO Auto-generated method stub
+		return (List<Orders>)service.findAll();
+	}
+
+	@Override
+	public List<Orders> orderbyProductID(Integer productiD) {
+		List<Orders> list =  (List<Orders>)service.findAll();
+		List<Orders> orderlist = null;
+		for (Orders orders : list) {
+			if(orders.getProductID()==productiD) {
+				orderlist.add(orders);
+			}
+		}
+		return orderlist; 
+	}
+
+	@Override
+	public void deleteOrderById(Integer OrderID) {
+		// TODO Auto-generated method stub
+		service.deleteById(OrderID);
+	}
+
+	}

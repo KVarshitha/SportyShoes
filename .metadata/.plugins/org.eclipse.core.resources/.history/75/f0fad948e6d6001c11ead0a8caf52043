@@ -1,0 +1,29 @@
+package com.spring.boot.ss.models;
+
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Orders {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	Integer OrderID;
+	
+	Date OrderDate;
+	
+	Integer productID;
+	
+	@ManyToOne
+    @JoinColumn(name="user_Id", nullable=false)
+	Integer UserID;
+	
+	
+}

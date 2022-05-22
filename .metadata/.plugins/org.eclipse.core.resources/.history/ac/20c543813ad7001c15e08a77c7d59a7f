@@ -1,0 +1,5 @@
+package com.spring.boot.ss.services;
+
+public interface ProductService {
+
+}

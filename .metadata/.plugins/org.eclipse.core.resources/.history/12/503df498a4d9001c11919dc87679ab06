@@ -1,0 +1,30 @@
+package com.spring.boot.ss.services;
+
+import java.util.List;
+
+
+import com.spring.boot.ss.models.Orders;
+
+
+public interface OrderService  {
+
+	Orders addOrder(Orders order);
+	  
+    // Read operation
+    List<Orders> UserorderbyuserID(Integer userID);
+    
+
+    List<Orders> Allorders();
+  
+    List<Orders> orderbyProductID(Integer productiD);
+  
+    // Delete operation
+    void deleteOrderById(Integer OrderID);
+    
+    
+    public Orders addToCart(Orders cart);
+	public void deleteCart(int cartId);
+	public Cart updateCart(Cart cart);
+	public Cart getCartById(int cartId);
+	public List<Cart> getAllCarts();
+}

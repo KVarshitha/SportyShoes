@@ -1,0 +1,19 @@
+package com.springboot.demo;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class SportyShoesApp {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SportyShoesApp.class, args);
+		System.out.println("Sporty Shoes app works");
+	}
+	private CommandLineRunner commandLineRunner(ApplicationContext ctx)
+	return {
+		
+	}
+}

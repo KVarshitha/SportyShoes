@@ -1,0 +1,76 @@
+package com.spring.boot.ss.models;
+
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.LazyToOne;
+import org.hibernate.annotations.LazyToOneOption;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+public class Orders {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	Integer OrderID;
+
+	@Column
+	@JsonProperty(value="productID")
+	Integer productID;
+	
+	@Column
+	@JsonProperty(value="userID")
+	Integer UserID;
+	
+	@Column(name = "Order_Date", nullable = false)
+    private Date orderDate;
+
+	public Integer getOrderID() {
+		return OrderID;
+	}
+
+	public void setOrderID(Integer orderID) {
+		OrderID = orderID;
+	}
+
+	public Integer getProductID() {
+		return productID;
+	}
+
+	public void setProductID(Integer productID) {
+		this.productID = productID;
+	}
+
+	public Integer getUserID() {
+		return UserID;
+	}
+
+	public void setUserID(Integer userID) {
+		UserID = userID;
+	}
+
+	public Orders() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Orders(Integer productID, Integer userID) {
+		super();
+		this.productID = productID;
+		UserID = userID;
+	}
+
+	
+}

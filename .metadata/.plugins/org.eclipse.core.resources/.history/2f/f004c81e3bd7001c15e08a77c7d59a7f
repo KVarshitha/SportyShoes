@@ -1,0 +1,40 @@
+package com.spring.boot.ss.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.boot.ss.models.Product;
+import com.spring.boot.ss.repo.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+	
+	@Autowired
+	private ProductRepository repository;
+
+	@Override
+	public Product saveDepartment(Product Product) {
+			repository.save(Product);
+	}
+
+	@Override
+	public List<Product> fetchProductList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product updateProduct(Product Product, Integer ProductId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteProductById(Integer ProductId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

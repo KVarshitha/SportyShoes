@@ -1,0 +1,87 @@
+package com.spring.boot.ss.models;
+
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.LazyToOne;
+import org.hibernate.annotations.LazyToOneOption;
+
+@Entity
+public class Orders {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	Integer OrderID;
+	@Column
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+	Date OrderDate;
+	
+	@Column
+	@LazyToOne(value=LazyToOneOption.NO_PROXY)
+	Integer productID;
+	
+	@ManyToOne(targetEntity = User.class)
+    @JoinColumn(name="User_ID")
+	Integer UserID;
+
+	public Integer getOrderID() {
+		return OrderID;
+	}
+
+	public void setOrderID(Integer orderID) {
+		OrderID = orderID;
+	}
+
+	public Date getOrderDate() {
+		return OrderDate;
+	}
+
+	public void setOrderDate(Date orderDate) {
+		OrderDate = orderDate;
+	}
+
+	public Integer getProductID() {
+		return productID;
+	}
+
+	public void setProductID(Integer productID) {
+		this.productID = productID;
+	}
+
+	public Integer getUserID() {
+		return UserID;
+	}
+
+	public void setUserID(Integer userID) {
+		UserID = userID;
+	}
+
+	public Orders(Date orderDate, Integer productID, Integer userID) {
+		super();
+		OrderDate = orderDate;
+		this.productID = productID;
+		UserID = userID;
+	}
+
+	public Orders() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Orders [OrderID=" + OrderID + ", OrderDate=" + OrderDate + ", productID=" + productID + ", UserID="
+				+ UserID + "]";
+	}
+	
+	
+}
